@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api } from '../api.js';
 
+// const STATUSES = ['queued', 'sent', 'delivered', 'delayed', 'bounced', 'complained', 'failed'];
 const STATUSES = ['queued', 'sent', 'delivered', 'delayed', 'bounced', 'complained', 'failed'];
 
 const fmt = (iso) =>

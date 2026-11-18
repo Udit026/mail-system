@@ -31,13 +31,14 @@ router.post('/resend', async (req, res) => {
   const rawBody = req.body.toString('utf8');
   let event;
 
-  try {
+   try {
     const wh = new Webhook(config.resendWebhookSecret);
-    event = wh.verify(rawBody, {
+    wh.verify(rawBody, {
       'svix-id': req.headers['svix-id'],
       'svix-timestamp': req.headers['svix-timestamp'],
       'svix-signature': req.headers['svix-signature'],
     });
+    event = JSON.parse(rawBody);
   } catch {
     return res.status(400).json({ error: 'Invalid signature' });
   }
