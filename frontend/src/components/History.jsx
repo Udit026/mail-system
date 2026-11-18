@@ -218,7 +218,7 @@ function Detail({ data, onClose }) {
 
         <h4>Delivery timeline</h4>
         {events.length === 0 ? (
-          <p className="muted">No delivery events yet (webhook se aate hain).</p>
+          <p className="muted">No delivery events yet (coming from Webhook).</p>
         ) : (
           <ul className="timeline">
             {events.map((ev, i) => (
